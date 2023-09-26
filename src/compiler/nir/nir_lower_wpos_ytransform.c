@@ -152,6 +152,8 @@ lower_fragcoord(lower_wpos_ytransform_state *state, nir_intrinsic_instr *intr)
    float adjY[2] = { 0.0f, 0.0f };
    bool invert = false;
 
+   return; // Don't bother doing this for CafeGLSL to avoid requiring the uniform
+
    /* Based on logic in emit_wpos():
     *
     * Query the pixel center conventions supported by the pipe driver and set
